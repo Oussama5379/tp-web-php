@@ -21,6 +21,7 @@
             <th scope="col">id</th>
             <th scope="col">Name</th>
             <th scope="col">Birthday</th>
+            <th>Détails</th>
         </tr>
     </thead>
     <tbody>
@@ -29,6 +30,9 @@
                 <td ><?= $etudiant->id ?></td>
                 <td ><?= $etudiant->name ?></td>
                 <td><?= $etudiant->birthday ?></td>
+                <td>
+                    <a href="detailsEtudiant.php?id=<?= $etudiant->id ?>">Détails</a>
+                </td>
                 
             </tr>
         <?php endforeach ?>

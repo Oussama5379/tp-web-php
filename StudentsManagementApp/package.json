@@ -11,5 +11,9 @@
   "description": "",
   "dependencies": {
     "bootstrap": "^5.3.5"
+  },
+  "devDependencies": {
+    "@prettier/plugin-php": "^0.22.4",
+    "prettier": "^3.5.3"
   }
 }

@@ -32,7 +32,6 @@ $sections=$sectionObj->getListOfSections();
                                     <i class="fas fa-ellipsis-h" style="color: blue; font-size: 20px;"></i>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="viewSection.php?id=<?= htmlspecialchars($section['id']); ?>">Voir</a></li>
                                     <li><a class="dropdown-item" href="editSection.php?id=<?= htmlspecialchars($section['id']); ?>">Modifier</a></li>
                                     <li><a class="dropdown-item" href="deleteSection.php?id=<?= htmlspecialchars($section['id']); ?>" >Supprimer</a></li>
                                 </ul>
@@ -52,6 +51,7 @@ $sections=$sectionObj->getListOfSections();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
         <script>
         $(document).ready(function() {

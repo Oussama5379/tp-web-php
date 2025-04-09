@@ -25,7 +25,7 @@ $sections=$sectionObj->getListOfSections();
         <?php } ?>
     </select>
     <button class="btn btn-primary" type="submit">
-        Edit
+        Modifier la section
     </button>
 </form>
 

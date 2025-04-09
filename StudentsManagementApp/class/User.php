@@ -59,6 +59,13 @@ class User {
         $response->execute(['name'=>$name,'birthday'=>$birthday,'section'=>$section,'image' => $image]);
 
     }
+    public function editSection($id,$designation,$description){
+        $query="UPDATE section
+            SET designation = :designation, description = :description
+                WHERE id=:id";
+        $response = $this->db->prepare($query);
+        $response->execute(['designation'=>$designation,'description'=>$description,'id' => $id]);
+    }
     
     
 };

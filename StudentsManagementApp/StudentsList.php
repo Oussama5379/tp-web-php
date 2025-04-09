@@ -35,7 +35,7 @@ $students=$user->getAllStudents();
                     <a href="editStudent.php?id=<?= htmlspecialchars($student['id']); ?>" class="me-2" title="Edit">
                                 <i class="fas fa-pencil" style="color: blue; font-size: 20px;"></i>
                     </a>
-                    <a href="deleteStudent.php?id=<?= htmlspecialchars($student['id']); ?>"  title="Delete">
+                    <a id="deleteStudent" href="deleteStudent.php?id=<?= htmlspecialchars($student['id']); ?>"  title="Delete">
                                 <i class="fas fa-trash" style="color: blue; font-size: 20px;"></i>
                     </a>
                 </td>

@@ -39,6 +39,12 @@ class User {
         return $role['role'];
         
     }
+    public function deleteStudent($id){
+        $query="DELETE FROM student WHERE id=:id ";
+        $response = $this->db->prepare($query);
+        $response->execute(['id' => $id]);
+
+    }
     
     
 };

@@ -7,7 +7,7 @@ $user = new User($db);
 
 
 if($user->getRole($_SESSION['username'])!="admin") {
-    header('Location: index.php');
+    header('Location: StudentsList.php');
     exit;
 }
 if (isset($_GET['id'])) {

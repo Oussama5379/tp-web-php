@@ -45,6 +45,14 @@ class User {
         $response->execute(['id' => $id]);
 
     }
+    public function editStudent($id,$name,$birthday,$section) {
+        $query="UPDATE student
+            SET name = :name, birthday = :birthday, sectionId=:section
+                WHERE id=:id";
+        $response = $this->db->prepare($query);
+        $response->execute(['name'=>$name,'birthday'=>$birthday,'section'=>$section,'id' => $id]);
+
+    }
     
     
 };

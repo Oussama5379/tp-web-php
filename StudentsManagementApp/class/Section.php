@@ -11,7 +11,7 @@ class Section {
     public function getListOfSections()
     {
         $query = 'Select * from section ';
-        $response = $this->_db->query($query);
+        $response = $this->db->query($query);
         return $response->fetchAll(PDO::FETCH_ASSOC);
     }
     public function getListOfStudentsBySection($section){

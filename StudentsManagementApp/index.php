@@ -17,7 +17,7 @@
         <a class="nav-link" href="StudentsList.php">Liste des étudiants</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Liste des sections</a>
+        <a class="nav-link" href="sectionsList.php">Liste des sections</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="logout.php">Logout</a>

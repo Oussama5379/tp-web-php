@@ -11,10 +11,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home </a>
+        <a class="nav-link" href="home.php">Home </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Liste des étudiants</a>
+        <a class="nav-link" href="StudentsList.php">Liste des étudiants</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Liste des sections</a>
@@ -29,11 +29,5 @@
 </nav>
 
 <h1> HELLO ,PHP LOVERS ! Welcome to you Adminstration Platform</h1>
-
-
-
-
-
-
 
 <?php include 'fragments/footer.php' ?>

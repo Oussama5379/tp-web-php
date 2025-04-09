@@ -8,6 +8,7 @@ $user=new User($db);
 if (isset($username) && isset($password)) {
     if ($user->isUserExist($username) && $user->getPassword($username)!="" && $user->getPassword($username)==$password ) {
         $_SESSION['username'] = $username;
+        $_SESSION['role']=$user->getRole($username);
         header("Location:index.php");
     } else {
     

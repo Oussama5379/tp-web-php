@@ -30,6 +30,15 @@ class User {
         return $user;
         
     }
-
+    public function getRole($username){
+        $query = 'SELECT role FROM user WHERE username = :username';
+        $response = $this->db->prepare($query);
+        $response->execute(['username' => $username]);
+        $role = $response->fetch(PDO::FETCH_ASSOC);
+    
+        return $role['role'];
+        
+    }
+    
     
 };

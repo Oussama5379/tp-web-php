@@ -53,6 +53,12 @@ class User {
         $response->execute(['name'=>$name,'birthday'=>$birthday,'section'=>$section,'id' => $id]);
 
     }
+    public function addStudent($id,$name,$birthday,$section,$image){
+        $query="INSERT INTO student (name, birthday, image, sectionId) VALUES ( :name, :birthday, :image, :section);";
+        $response = $this->db->prepare($query);
+        $response->execute(['name'=>$name,'birthday'=>$birthday,'section'=>$section,'image' => $image]);
+
+    }
     
     
 };

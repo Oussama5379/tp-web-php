@@ -66,6 +66,12 @@ class User {
         $response = $this->db->prepare($query);
         $response->execute(['designation'=>$designation,'description'=>$description,'id' => $id]);
     }
+    public function deleteSection($id){
+        $query="DELETE FROM section WHERE id=:id ";
+        $response = $this->db->prepare($query);
+        $response->execute(['id' => $id]);
+
+    }
     
     
 };

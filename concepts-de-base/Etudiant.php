@@ -1,34 +1,33 @@
-<?php 
-class Etudiant{
-    private $nom;
-    private $notes;
-    public function __construct($nom,$notes){
-        $this->nom=$nom;
-        $this->notes=$notes;
+<?php
+class Etudiant {
+    public $nom;
+    public $notes;
 
+    public function __construct($nom, $notes) {
+        $this->nom = $nom;
+        $this->notes = $notes;
     }
-    public function afficherNotes(){
-        echo "les notes de " .$this->nom . ": ";
-        foreach($this->notes as $note){
-            echo $note . " ";
+
+    public function afficherNotes() {
+        foreach ($this->notes as $note) {
+            if ($note < 10) {
+                $couleur = "rouge";
+            } elseif ($note == 10) {
+                $couleur = "orange";
+            } else {
+                $couleur = "vert";
+            }
+            echo "<div class='$couleur'>$note</div>";
         }
-        echo "<br>";
     }
+
     public function calculerMoyenne() {
-        $somme = array_sum($this->notes);  
-        $moyenne = $somme / count($this->notes);  
-        return $moyenne;
+        $somme = array_sum($this->notes);
+        return $somme / count($this->notes);
     }
 
-    public function afficherStatut() {
-        $moyenne = $this->calculerMoyenne();  
-        if ($moyenne >= 10) {
-            echo $this->nom . " est admis avec une moyenne de " . $moyenne . "<br>";
-        } else {
-            echo $this->nom . " n'est pas admis avec une moyenne de " . $moyenne . "<br>";
-        }
+    public function estAdmis() {
+        return $this->calculerMoyenne() >= 10;
     }
 }
 ?>
-
-

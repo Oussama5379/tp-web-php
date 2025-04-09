@@ -7,9 +7,33 @@ $db = ConnexionDb::getInstance();
 $user= new Student($db);
 $students=$user->getAllStudents();
 
+$sectionObj = new Section($db);
+$sections = $sectionObj->getListOfSections();
 ?>
 
 <h2>Liste des étudiants</h2>
+<div class="d-flex justify-content-between mb-3">
+        <div>
+            <a href="addStudent.php" class="btn btn-danger">
+                <i class="fas fa-plus"></i> Ajouter un étudiant
+            </a>
+        </div>
+        <div class="d-flex align-items-center">
+            <select id="sectionFilter" class="form-select me-2" style="width: 200px;">
+                <option value="">Toutes les sections</option>
+                <?php foreach ($sections as $section): ?>
+                    <option value="<?php echo htmlspecialchars($section['designation']); ?>">
+                        <?php echo htmlspecialchars($section['designation']); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            <button id="filterBtn" class="btn btn-primary">
+                <i class="fas fa-filter"></i> Filtrer
+            </button>
+        </div>
+    </div>
+
+
     <table  id="studentTable" class="table" style="width:60%">
         <thead>
             <tr>
@@ -56,15 +80,23 @@ $students=$user->getAllStudents();
 
         <script>
         $(document).ready(function() {
-            $('#studentTable').DataTable({
+            let table=$('#studentTable').DataTable({
                 dom: 'Bfrtip',
                 buttons: ['copy', 'excel', 'csv', 'pdf'],
                 language: {
                     url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json' 
                 },
                 columnDefs: [
-                    { orderable: false, targets: 5 } 
+                    { orderable: false, targets:5 } 
                 ]
+            });
+            $('#filterBtn').on('click', function() {
+                let section = $('#sectionFilter').val();
+                if (section === '') {
+                    table.column(4).search('').draw(); 
+                } else {
+                    table.column(4).search(section).draw(); 
+                }
             });
         });
         </script>

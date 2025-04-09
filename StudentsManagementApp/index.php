@@ -1,5 +1,6 @@
 <?php 
-    include "fragments/header.php"
+    include "fragments/header.php" ;
+    include_once "isAuthentificated.php" ;
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Students Management System</a>
@@ -19,7 +20,7 @@
         <a class="nav-link" href="#">Liste des sections</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Logout</a>
+        <a class="nav-link" href="logout.php">Logout</a>
       </li>
       
     </ul>
